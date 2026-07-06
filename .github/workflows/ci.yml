@@ -89,7 +89,16 @@ jobs:
       - name: Run tests
         run: |
           if [ -d tests ] && [ -n "$(find tests -name 'test_*.py' -o -name '*_test.py' 2>/dev/null)" ]; then
+            set +e
             pytest -q
+            rc=$?
+            set -e
+            # Exit code 5 = pytest collected no tests (empty placeholder files). Treat as success.
+            if [ $rc -eq 5 ]; then
+              echo "pytest found no tests to run — treating as success."
+              exit 0
+            fi
+            exit $rc
           else
             echo "No test files found in tests/ — skipping pytest."
           fi
