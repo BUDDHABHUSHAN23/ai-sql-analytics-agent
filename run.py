@@ -1,4 +1,4 @@
-from app.ai.llm import llm_service
+from backend.ai.llm import llm_service
 
 llm = llm_service.get_llm()
 

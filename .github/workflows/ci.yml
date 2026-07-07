@@ -74,17 +74,17 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          flake8 app --count --select=E9,F63,F7,F82 --show-source --statistics
-          flake8 app --count --max-line-length=120 --statistics --exit-zero
+          flake8 backend --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 backend --count --max-line-length=120 --statistics --exit-zero
 
       - name: Check formatting with black
-        run: black --check app || true
+        run: black --check backend || true
 
       - name: Check import order with isort
-        run: isort --check-only app || true
+        run: isort --check-only backend || true
 
-      - name: Smoke import (settings + app.main)
-        run: python -c "from app.core.config import settings; import app.main; print('OK', settings.APP_NAME)"
+      - name: Smoke import (settings + backend.main)
+        run: python -c "from backend.core.config import settings; import backend.main; print('OK', settings.APP_NAME)"
 
       - name: Run tests
         run: |

@@ -1,7 +1,7 @@
 from sqlalchemy import inspect
 from sqlalchemy.engine import Engine
 
-from app.schemas.schema import (
+from backend.schemas.schema import (
     ColumnSchema,
     DatabaseSchema,
     ForeignKeySchema,

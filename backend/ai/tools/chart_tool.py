@@ -1,6 +1,6 @@
 from langchain_core.tools import tool
 
-from app.services.chart_service import chart_service
+from backend.services.chart_service import chart_service
 
 
 @tool

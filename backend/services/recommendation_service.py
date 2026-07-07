@@ -1,7 +1,7 @@
 import json
 
-from app.ai.llm import llm_service
-from app.prompts.recommendation_prompt import recommendation_prompt
+from backend.ai.llm import llm_service
+from backend.prompts.recommendation_prompt import recommendation_prompt
 
 
 class RecommendationService:

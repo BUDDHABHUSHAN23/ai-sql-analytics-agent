@@ -1,16 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.db.session import get_db
-from app.db.models import User
-from app.schemas.database import (
+from backend.db.session import get_db
+from backend.db.models import User
+from backend.schemas.database import (
     DatabaseConnectionCreate,
     DatabaseConnectionUpdate,
     DatabaseConnectionResponse,
     DatabaseConnectionTest,
 )
-from app.services.database_service import DatabaseService
-from app.api.dependencies.auth import get_current_user
+from backend.services.database_service import DatabaseService
+from backend.api.dependencies.auth import get_current_user
 
 router = APIRouter(
     prefix="/database",

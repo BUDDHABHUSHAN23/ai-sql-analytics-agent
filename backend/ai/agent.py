@@ -1,13 +1,13 @@
 from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
 
-from app.ai.llm import llm_service
-from app.prompts.sql_prompt import sql_prompt
+from backend.ai.llm import llm_service
+from backend.prompts.sql_prompt import sql_prompt
 
-# Import tools 
-from app.ai.tools.schema_tool import schema_tool
-from app.ai.tools.execute_sql_tool import execute_sql_tool
-from app.ai.tools.chart_tool import chart_tool
-from app.ai.tools.recommendation_tool import recommendation_tool
+# Import tools
+from backend.ai.tools.schema_tool import schema_tool
+from backend.ai.tools.execute_sql_tool import execute_sql_tool
+from backend.ai.tools.chart_tool import chart_tool
+from backend.ai.tools.recommendation_tool import recommendation_tool
 
 
 class SQLAnalyticsAgent:
@@ -50,6 +50,8 @@ class SQLAnalyticsAgent:
                 {
                     "input": question,
                     "user_id": user_id,
+                    # Required by sql_prompt's MessagesPlaceholder — no persisted history yet.
+                    "chat_history": [],
                 }
             )
 

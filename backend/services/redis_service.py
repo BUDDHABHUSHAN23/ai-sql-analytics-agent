@@ -5,7 +5,7 @@ from typing import Any, Optional
 import redis
 from redis.exceptions import RedisError
 
-from app.core.config import settings
+from backend.core.config import settings
 
 logger = logging.getLogger(__name__)
 

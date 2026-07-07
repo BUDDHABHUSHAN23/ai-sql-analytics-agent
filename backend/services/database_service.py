@@ -2,9 +2,9 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
 from cryptography.fernet import Fernet
 from sqlalchemy.orm import Session
-from app.schemas.database import DatabaseConnectionCreate, DatabaseConnectionUpdate
-from app.db.models import DatabaseConnection
-from app.core.config import settings
+from backend.schemas.database import DatabaseConnectionCreate, DatabaseConnectionUpdate
+from backend.db.models import DatabaseConnection
+from backend.core.config import settings
 
 
 
@@ -142,7 +142,7 @@ class DatabaseService:
         Session-less lookup used by AI tools that don't receive a db dependency.
         """
 
-        from app.db.database import SessionLocal
+        from backend.db.database import SessionLocal
 
         db = SessionLocal()
         try:

@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from sqlalchemy import text
-from app.core.config import settings
-from app.db.database import engine
-from app.db import models
-from app.api.routes.auth import router as auth_router
-from app.api.routes.database import router as database_router
-from app.api.routes.ai import router as ai_router
+from backend.core.config import settings
+from backend.db.database import engine
+from backend.db import models
+from backend.api.routes.auth import router as auth_router
+from backend.api.routes.database import router as database_router
+from backend.api.routes.ai import router as ai_router
 
 
 app = FastAPI(

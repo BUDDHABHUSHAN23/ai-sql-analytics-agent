@@ -1,7 +1,7 @@
 from langchain_core.tools import tool
-from app.services.redis_service import redis_service
-from app.services.database_service import database_service
-from app.services.schema_service import SchemaService
+from backend.services.redis_service import redis_service
+from backend.services.database_service import database_service
+from backend.services.schema_service import SchemaService
 
 
 @tool

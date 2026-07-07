@@ -1,8 +1,8 @@
 from langchain_core.tools import tool
 
-from app.services.database_service import database_service
-from app.services.sql_service import SQLService
-from app.services.sql_validator import SQLValidator
+from backend.services.database_service import database_service
+from backend.services.sql_service import SQLService
+from backend.services.sql_validator import SQLValidator
 
 
 @tool

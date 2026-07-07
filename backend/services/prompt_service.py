@@ -1,6 +1,6 @@
 from typing import Optional
 
-from app.prompts.sql_prompt import SQL_SYSTEM_PROMPT
+from backend.prompts.sql_prompt import SQL_SYSTEM_PROMPT
 
 
 class PromptService:

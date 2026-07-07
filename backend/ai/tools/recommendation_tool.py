@@ -1,6 +1,6 @@
 from langchain_core.tools import tool
 
-from app.services.recommendation_service import recommendation_service
+from backend.services.recommendation_service import recommendation_service
 
 
 @tool

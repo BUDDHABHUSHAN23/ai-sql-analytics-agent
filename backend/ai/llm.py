@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 
-from app.core.config import settings
+from backend.core.config import settings
 
 
 class LLMService:
@@ -30,6 +30,9 @@ class LLMService:
             return self.llm.bind_tools(tools)
 
         return self.llm
+
+    def invoke(self, prompt):
+        return self.llm.invoke(prompt)
 
 
 llm_service = LLMService()
