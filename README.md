@@ -253,56 +253,75 @@ AI Summary      Chart Generator   Recommendations
 
 ```
 ai-sql-analytics-agent/
-
-├── app/
 │
-├── api/
-│   ├── routes/
+├── backend/                       # FastAPI application
+│   ├── main.py
+│   ├── api/
+│   │   ├── routes/
+│   │   │   ├── auth.py
+│   │   │   ├── database.py
+│   │   │   └── ai.py
+│   │   └── dependencies/
+│   │       └── auth.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── security.py
+│   ├── db/
+│   │   ├── database.py
+│   │   ├── models.py
+│   │   └── session.py
+│   ├── ai/
+│   │   ├── agent.py
+│   │   ├── llm.py
+│   │   └── tools/
+│   │       ├── schema_tool.py
+│   │       ├── execute_sql_tool.py
+│   │       ├── chart_tool.py
+│   │       └── recommendation_tool.py
+│   ├── services/
+│   │   ├── database_service.py
+│   │   ├── schema_service.py
+│   │   ├── sql_service.py
+│   │   ├── sql_validator.py
+│   │   ├── chart_service.py
+│   │   ├── recommendation_service.py
+│   │   ├── prompt_service.py
+│   │   └── redis_service.py
+│   ├── prompts/
+│   │   ├── sql_prompt.py
+│   │   └── recommendation_prompt.py
+│   ├── schemas/
 │   │   ├── auth.py
 │   │   ├── database.py
 │   │   ├── schema.py
-│   │   └── chat.py
-│   │
-│   └── dependencies/
+│   │   └── ai.py
+│   └── utils/
 │
-├── core/
-│   ├── config.py
-│   ├── security.py
-│   └── database.py
+├── frontend/                      # Vite + React + TypeScript SPA
+│   ├── src/
+│   │   ├── api/client.ts
+│   │   ├── auth/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── public/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── package.json
+│   └── vite.config.ts
 │
-├── db/
-│   ├── models.py
-│   ├── database.py
-│   └── session.py
-│
-├── services/
-│   ├── auth_service.py
-│   ├── database_service.py
-│   ├── schema_service.py
-│   ├── prompt_service.py
-│   ├── llm_service.py
-│   ├── sql_validator.py
-│   ├── sql_service.py
-│   ├── analytics_service.py
-│   ├── chart_service.py
-│   ├── memory_service.py
-│   ├── history_service.py
-│   └── recommendation_service.py
-│
-├── prompts/
-│   ├── sql_prompt.py
-│   ├── analytics_prompt.py
-│   └── summary_prompt.py
-│
-├── repositories/
-├── schemas/
-├── utils/
+├── docker/
+│   └── entrypoint.sh
 ├── tests/
-│
+├── sql_query/
+├── Dockerfile                     # Backend image
+├── docker-compose.yml             # db + redis + backend + frontend
 ├── requirements.txt
-├── .env
-├── README.md
-└── main.py
+├── create_tables.py
+├── run.py
+├── .env.example
+└── README.md
 ```
 
 ---
